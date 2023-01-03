@@ -80,6 +80,8 @@ button {
   justify-content: space-around;
   align-items: center;
   color: #606060;
+  font-family: 'Caveat', cursive;
+  font-size: 400%;
 }
 
 .bg {

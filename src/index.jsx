@@ -20,6 +20,11 @@ function Overlay() {
         <div className="stack">
           <button onClick={() => set(true)}>Enter gm Cafe</button>
         </div>
+        <div className="instructions">
+        <p>
+            Use WASD to move, click laptop screen on cafe table to play lofi
+          </p>
+        </div>
       </div>
     </>
   )
