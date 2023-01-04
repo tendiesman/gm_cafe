@@ -84,6 +84,17 @@ button {
   font-size: 400%;
 }
 
+.loading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  font-family: 'Caveat', cursive;
+  font-size: 400%;
+}
+
 .bg {
   background: #ffffff;
 }
