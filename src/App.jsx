@@ -27,7 +27,7 @@ function Image() {
 
 function Loaded() {
   const { active, progress, errors, item, loaded, total } = useProgress()
-  return <div className="loading">{progress.toFixed(2)} % loaded</div>
+  return <div className="loading">{progress.toFixed(2)} % loaded ☕️</div>
 }
 
 export default function App() {
