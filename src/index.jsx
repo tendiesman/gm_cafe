@@ -22,8 +22,9 @@ function Overlay() {
         </div>
         <div className="instructions">
         <p>
-            Use WASD to move, click laptop screen on cafe table to play lofi
+            Use WASD to move, click laptop screen on cafe table to play Lofi
           </p>
+          
         </div>
       </div>
     </>

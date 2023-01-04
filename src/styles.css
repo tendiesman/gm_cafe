@@ -48,10 +48,10 @@ button {
   outline: inherit;
   background: white;
   border: 1px solid transparent;
-  border-bottom: 3px solid #a0a0a0;
+  border-bottom: 3px solid #ffffff;
   border-radius: 3px;
   padding: 8px 24px;
-  color: black;
+  color: rgb(0, 0, 0);
   display: flex;
   align-items: center;
   justify-content: center;

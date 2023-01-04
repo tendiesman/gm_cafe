@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import React, { Fragment, Suspense, useRef, useState, useEffect, useMemo } from 'react'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
-import { Reflector, Environment, Loader, OrbitControls, PointerLockControls, KeyboardControls, PositionalAudio } from '@react-three/drei'
+import { Reflector, Environment, Loader, OrbitControls, PointerLockControls, KeyboardControls, PositionalAudio, useProgress } from '@react-three/drei'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import {Model} from './Cafe.jsx'
@@ -23,6 +23,11 @@ function Image() {
 </mesh>
 );
 
+}
+
+function Loaded() {
+  const { active, progress, errors, item, loaded, total } = useProgress()
+  return <div className="stack">{progress} % loaded</div>
 }
 
 export default function App() {
@@ -52,7 +57,7 @@ export default function App() {
         { name: "right", keys: ["ArrowRight", "d", "D"] },
         { name: "jump", keys: ["Space"] },
       ]}>
-    
+    <Suspense fallback={<Loaded />}>
     <Canvas camera={{ fov: 50 }}>
      
       
@@ -67,6 +72,7 @@ export default function App() {
       
     <PointerLockControls /> 
     </Canvas>
+    </Suspense>
     </KeyboardControls>
     </div>
   )
