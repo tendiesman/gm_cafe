@@ -4,7 +4,7 @@ import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import { Reflector, Environment, Loader, OrbitControls, PointerLockControls, KeyboardControls, PositionalAudio, useProgress } from '@react-three/drei'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import {Model} from './Cafe.jsx'
+import {Litemodel} from './Cafe_lite.jsx'
 import { Person } from "./Person"
 import { Physics } from "@react-three/rapier"
 import Image2 from "/6NFcPEDO39HDxlOid6fh0KsU2bdIfuNnpUB3rlpBFJVbnA_jILc2J6SS4VAdjIZKoGT92t0TJDHxb-lEwYaeR8Iz0422nlPyUJSb.png"
@@ -63,7 +63,7 @@ export default function App() {
       
       <ambientLight intensity={0.5} />
       <directionalLight color="red" position={[0, 0, 5]} /> 
-      <Model scale={[5,5,5]}/>
+      <Litemodel scale={[5,5,5]}/>
       <Image />
       <Physics gravity={[0, 0, 0]}>
       <Person />
