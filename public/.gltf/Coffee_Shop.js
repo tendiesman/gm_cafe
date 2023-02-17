@@ -6,7 +6,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
-  const { nodes, materials } = useGLTF('/Coffee_Shop.gltf')
+  const { nodes, materials } = useGLTF('/Coffee_Shop-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <group position={[-0.35, 0.41, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
@@ -72,11 +72,11 @@ export function Model(props) {
           <mesh geometry={nodes.fridge.geometry} material={materials.fridge} position={[0, 0, 2.39]} />
           <group position={[0, 0, 2.39]}>
             <mesh geometry={nodes.Scene075.geometry} material={materials.fridge} />
-            <mesh geometry={nodes.Scene075_1.geometry} material={materials.fridge_glass} />
+            <mesh geometry={nodes.Scene075_1.geometry} material={materials.fridge} />
           </group>
           <group position={[0, -2, 2.39]}>
             <mesh geometry={nodes.Scene076.geometry} material={materials.fridge} />
-            <mesh geometry={nodes.Scene076_1.geometry} material={materials.fridge_glass} />
+            <mesh geometry={nodes.Scene076_1.geometry} material={materials.fridge} />
           </group>
           <mesh geometry={nodes.fridge_part__1_.geometry} material={materials.fridge} position={[0, 0, 32.39]} />
           <mesh geometry={nodes.fridge_part__2_.geometry} material={materials.fridge} position={[0, 0, 62.39]} />
@@ -370,6 +370,16 @@ export function Model(props) {
         <mesh geometry={nodes.Bag_1__5_.geometry} material={materials.Coffe_bags} position={[262.2, -413.8, 0]} rotation={[0, 0, 2.21]} />
         <mesh geometry={nodes.Bag_2.geometry} material={materials.Coffe_bags} position={[-443.5, -473.1, 0]} />
         <mesh geometry={nodes.Bag_2__1_.geometry} material={materials.Coffe_bags} position={[256.5, -449.6, 0]} />
+        <mesh geometry={nodes.Bike.geometry} material={materials.Bike_1} position={[544.8, 247.6, -95.7]} rotation={[-0.26, 0, 0]}>
+          <mesh geometry={nodes.Bike_1_1.geometry} material={materials.Bike_1} position={[0, 55.4, -70.53]} rotation={[-0.44, 0, 0]}>
+            <mesh geometry={nodes.Bike_1_1_1.geometry} material={materials.Bike_1} position={[0, 8.9, 41.49]} rotation={[0.44, 0, 0]} />
+          </mesh>
+          <mesh geometry={nodes.Bike_1_2.geometry} material={materials.Bike_1} position={[0, 13.32, -33.44]}>
+            <mesh geometry={nodes.Bike_1_2_1.geometry} material={materials.Bike_1} position={[-12.93, 17.18, 0]} rotation={[0, 0, -Math.PI]} />
+            <mesh geometry={nodes.Bike_1_2_2.geometry} material={materials.Bike_1} position={[12.93, -17.18, 0]} />
+          </mesh>
+          <mesh geometry={nodes.Bike_1_3.geometry} material={materials.Bike_1} position={[-1.13, -37.8, -36.78]} />
+        </mesh>
         <mesh geometry={nodes.bin.geometry} material={materials.rack} position={[-328, -18.6, 0]} />
         <mesh geometry={nodes.Birds.geometry} material={materials.Birds} position={[259.5, -226.6, -80.75]} rotation={[0, 0, Math.PI / 2]} />
         <mesh geometry={nodes.Birds__1_.geometry} material={materials.Birds} position={[259.5, -328.1, -180.8]} rotation={[0, 0, Math.PI / 2]} />
@@ -407,9 +417,6 @@ export function Model(props) {
         <mesh geometry={nodes.Box.geometry} material={materials.Box} position={[-485.6, -320.5, -131.04]} rotation={[0, 0, -Math.PI / 2]}>
           <mesh geometry={nodes.Box_1_1_1.geometry} material={materials.Box} position={[0, -5.65, -12.47]} rotation={[-0.96, 0, 0]} />
         </mesh>
-        <mesh geometry={nodes.Box__3_.geometry} material={materials.Box} position={[259.6, -426.4, -131.04]} rotation={[0, 0, Math.PI / 2]}>
-          <mesh geometry={nodes.Box_1_1_4.geometry} material={materials.Box} position={[0, -5.65, -12.47]} rotation={[-0.96, 0, 0]} />
-        </mesh>
         <mesh geometry={nodes.Box_2.geometry} material={materials.Box} position={[-485.6, -479.8, -131.04]} rotation={[0, 0, -Math.PI / 2]}>
           <mesh geometry={nodes.Box_1_1.geometry} material={materials.Box} position={[0, -5.65, -12.47]} />
         </mesh>
@@ -440,11 +447,11 @@ export function Model(props) {
         <mesh geometry={nodes.Box_2__9_.geometry} material={materials.Box} position={[-485.6, -470.93, -180.82]} rotation={[0, 0, -Math.PI / 2]}>
           <mesh geometry={nodes.Box_1_1_2.geometry} material={materials.Box} position={[0, -5.65, -12.47]} />
         </mesh>
+        <mesh geometry={nodes.Box__3_.geometry} material={materials.Box} position={[259.6, -426.4, -131.04]} rotation={[0, 0, Math.PI / 2]}>
+          <mesh geometry={nodes.Box_1_1_4.geometry} material={materials.Box} position={[0, -5.65, -12.47]} rotation={[-0.96, 0, 0]} />
+        </mesh>
         <mesh geometry={nodes.C_Cup.geometry} material={materials.C_Cup} position={[-487.23, -415.8, -130.84]}>
           <mesh geometry={nodes.C_Cup_1_1.geometry} material={materials.C_Cup} position={[0, 0, -11.41]} />
-        </mesh>
-        <mesh geometry={nodes.C_Cup__1_.geometry} material={materials.C_Cup} position={[-273.8, -93.15, -110]}>
-          <mesh geometry={nodes.C_Cup_1_1_1.geometry} material={materials.C_Cup} position={[0, 0, -11.41]} />
         </mesh>
         <mesh geometry={nodes.C_Cup_2.geometry} material={materials.C_Cup} position={[-487.23, -426.9, -130.84]} />
         <mesh geometry={nodes.C_Cup_2__10_.geometry} material={materials.C_Cup} position={[-487.23, -374.82, -202.76]} rotation={[-Math.PI, 0, -Math.PI]} />
@@ -479,6 +486,9 @@ export function Model(props) {
         <mesh geometry={nodes.C_Cup_2__7_.geometry} material={materials.C_Cup} position={[-487.23, -380.05, -191.85]} rotation={[-Math.PI, 0, -Math.PI]} />
         <mesh geometry={nodes.C_Cup_2__8_.geometry} material={materials.C_Cup} position={[-487.23, -390.2, -191.85]} rotation={[-Math.PI, 0, -Math.PI]} />
         <mesh geometry={nodes.C_Cup_2__9_.geometry} material={materials.C_Cup} position={[-487.23, -385.07, -202.76]} rotation={[-Math.PI, 0, -Math.PI]} />
+        <mesh geometry={nodes.C_Cup__1_.geometry} material={materials.C_Cup} position={[-273.8, -93.15, -110]}>
+          <mesh geometry={nodes.C_Cup_1_1_1.geometry} material={materials.C_Cup} position={[0, 0, -11.41]} />
+        </mesh>
         <mesh geometry={nodes.cake_3__1_.geometry} material={materials.cake_3} position={[-269.17, 6.77, -62.55]} rotation={[0, 0, 1.91]} scale={0.81} />
         <mesh geometry={nodes.cake_3__2__2.geometry} material={materials.cake_3} position={[-329.3, 387.28, -80.25]} rotation={[0, 0, 1.91]} scale={0.81} />
         <mesh geometry={nodes.cake_4__1_.geometry} material={materials.cake_4} position={[-275.59, -11.36, -90.77]} rotation={[0, 0, -1.8]}>
@@ -667,6 +677,7 @@ export function Model(props) {
         <mesh geometry={nodes.Milk_box__7_.geometry} material={materials.Milk_box} position={[-462.9, -136.2, -151.35]} />
         <mesh geometry={nodes.Milk_box__8_.geometry} material={materials.Milk_box} position={[-432.2, -122.3, -151.35]} />
         <mesh geometry={nodes.Milk_box__9_.geometry} material={materials.Milk_box} position={[-442.8, -122.3, -151.35]} />
+        <mesh geometry={nodes.Moss_panno.geometry} material={materials.Moss_2} position={[570, 252, -140]} rotation={[0, 0, Math.PI / 2]} />
         <group position={[-110.4, -499.9, -163.2]}>
           <mesh geometry={nodes.Scene008.geometry} material={materials.picture} />
           <mesh geometry={nodes.Scene008_1.geometry} material={materials.picture_glass} />
@@ -710,6 +721,15 @@ export function Model(props) {
           <mesh geometry={nodes.rack_1__2__6.geometry} material={materials.rack} position={[10, -47.5, -179]} />
           <mesh geometry={nodes.rack_1__3__6.geometry} material={materials.rack} position={[10, -47.5, -229]} />
         </mesh>
+        <mesh geometry={nodes.rack_1__1__7.geometry} material={materials.rack} position={[-477.3, 279.05, 0]} rotation={[0, 0, -Math.PI]} />
+        <mesh geometry={nodes.rack_1__2__7.geometry} material={materials.rack} position={[-477.3, 179.05, 0]} rotation={[0, 0, -Math.PI]} />
+        <mesh geometry={nodes.rack_1__3__7.geometry} material={materials.rack} position={[-477.3, 79.05, 0]} rotation={[0, 0, -Math.PI]} />
+        <mesh geometry={nodes.rack_1__4_.geometry} material={materials.rack} position={[-165.3, -477.3, 0]} rotation={[0, 0, -Math.PI / 2]} />
+        <mesh geometry={nodes.rack_1__5_.geometry} material={materials.rack} position={[-65.3, -477.3, 0]} rotation={[0, 0, -Math.PI / 2]} />
+        <mesh geometry={nodes.rack_1__6_.geometry} material={materials.rack} position={[34.7, -477.3, 0]} rotation={[0, 0, -Math.PI / 2]} />
+        <mesh geometry={nodes.rack_1__7_.geometry} material={materials.rack} position={[134.7, -477.3, 0]} rotation={[0, 0, -Math.PI / 2]} />
+        <mesh geometry={nodes.rack_1__8_.geometry} material={materials.rack} position={[234.7, -477.3, 0]} rotation={[0, 0, -Math.PI / 2]} />
+        <mesh geometry={nodes.rack_1__9_.geometry} material={materials.rack} position={[-265.3, -477.3, 0]} rotation={[0, 0, -Math.PI / 2]} />
         <mesh geometry={nodes.rack__1_.geometry} material={materials.rack} position={[249, -278.1, 0]}>
           <mesh geometry={nodes.rack_1.geometry} material={materials.rack} position={[10, -47.5, -129]} />
           <mesh geometry={nodes.rack_1__1_.geometry} material={materials.rack} position={[10, -47.5, -79]} />
@@ -752,15 +772,6 @@ export function Model(props) {
           <mesh geometry={nodes.rack_1__2__8.geometry} material={materials.rack} position={[10, -47.5, -179]} />
           <mesh geometry={nodes.rack_1__3__8.geometry} material={materials.rack} position={[10, -47.5, -229]} />
         </mesh>
-        <mesh geometry={nodes.rack_1__1__7.geometry} material={materials.rack} position={[-477.3, 279.05, 0]} rotation={[0, 0, -Math.PI]} />
-        <mesh geometry={nodes.rack_1__2__7.geometry} material={materials.rack} position={[-477.3, 179.05, 0]} rotation={[0, 0, -Math.PI]} />
-        <mesh geometry={nodes.rack_1__3__7.geometry} material={materials.rack} position={[-477.3, 79.05, 0]} rotation={[0, 0, -Math.PI]} />
-        <mesh geometry={nodes.rack_1__4_.geometry} material={materials.rack} position={[-165.3, -477.3, 0]} rotation={[0, 0, -Math.PI / 2]} />
-        <mesh geometry={nodes.rack_1__5_.geometry} material={materials.rack} position={[-65.3, -477.3, 0]} rotation={[0, 0, -Math.PI / 2]} />
-        <mesh geometry={nodes.rack_1__6_.geometry} material={materials.rack} position={[34.7, -477.3, 0]} rotation={[0, 0, -Math.PI / 2]} />
-        <mesh geometry={nodes.rack_1__7_.geometry} material={materials.rack} position={[134.7, -477.3, 0]} rotation={[0, 0, -Math.PI / 2]} />
-        <mesh geometry={nodes.rack_1__8_.geometry} material={materials.rack} position={[234.7, -477.3, 0]} rotation={[0, 0, -Math.PI / 2]} />
-        <mesh geometry={nodes.rack_1__9_.geometry} material={materials.rack} position={[-265.3, -477.3, 0]} rotation={[0, 0, -Math.PI / 2]} />
         <mesh geometry={nodes.round_table__1_.geometry} material={materials.round_table} position={[-89.8, -4.7, 0]} rotation={[0, 0, 0.68]} />
         <mesh geometry={nodes.round_table__2_.geometry} material={materials.round_table} position={[-89.8, -304.3, 0]} rotation={[0, 0, -3.04]} />
         <mesh geometry={nodes.round_table__3_.geometry} material={materials.round_table} position={[423.1, 399.7, 0]} rotation={[0, 0, 0.6]} />
@@ -1835,12 +1846,12 @@ export function Model(props) {
       <group position={[-0.35, 0.41, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
         <group position={[325, -304.1, -91.13]}>
           <mesh geometry={nodes.Scene272.geometry} material={materials.soap} />
-          <mesh geometry={nodes.Scene272_1.geometry} material={materials.soap_glass} />
+          <mesh geometry={nodes.Scene272_1.geometry} material={materials.soap} />
           <mesh geometry={nodes.soap_1001.geometry} material={materials.soap} />
         </group>
         <group position={[325, -395.6, -91.13]}>
           <mesh geometry={nodes.Scene272.geometry} material={materials.soap} />
-          <mesh geometry={nodes.Scene272_1.geometry} material={materials.soap_glass} />
+          <mesh geometry={nodes.Scene272_1.geometry} material={materials.soap} />
           <mesh geometry={nodes.soap_1_1.geometry} material={materials.soap} />
         </group>
         <group position={[333, -347.4, -71.2]} rotation={[0, 0, -Math.PI / 2]}>
@@ -1848,7 +1859,7 @@ export function Model(props) {
           <mesh geometry={nodes.Washers_1001.geometry} material={materials.Washers} position={[89.1, 4.1, -18.89]} />
           <mesh geometry={nodes.Washers_2.geometry} material={materials.Washers} position={[-88.1, 4.1, -18.89]} />
           <mesh geometry={nodes.Washers_2__1_.geometry} material={materials.Washers} position={[2.1, 4.1, -18.89]} />
-          <mesh geometry={nodes.Washers_mirror.geometry} material={materials.Washers_mirror} position={[0, -30.86, -20.61]} />
+          <mesh geometry={nodes.Washers_mirror.geometry} material={materials.Washers} position={[0, -30.86, -20.61]} />
         </group>
         <mesh geometry={nodes.bin__1_.geometry} material={materials.rack} position={[443.7, -462.3, 0]} />
         <mesh geometry={nodes.Handryer.geometry} material={materials.Handryer} position={[436.8, -19.2, -94.6]} rotation={[0, 0, -Math.PI]} />
@@ -1887,7 +1898,7 @@ export function Model(props) {
         <mesh geometry={nodes.Scene288_1.geometry} material={materials.celling} />
         <mesh geometry={nodes.Scene288_2.geometry} material={materials.wall} />
         <mesh geometry={nodes.Scene288_3.geometry} material={materials.wall_2} />
-        <mesh geometry={nodes.Scene289.geometry} material={materials.floor_001} />
+        <mesh geometry={nodes.Scene289.geometry} material={materials.wall_2} />
         <mesh geometry={nodes.Scene289_1.geometry} material={materials.celling} />
         <mesh geometry={nodes.Scene289_2.geometry} material={materials.wall} />
         <mesh geometry={nodes.Scene289_3.geometry} material={materials.wall_2} />
@@ -1941,8 +1952,9 @@ export function Model(props) {
           </mesh>
         </mesh>
       </group>
+      <mesh geometry={nodes.Cube.geometry} material={materials.Material} />
     </group>
   )
 }
 
-useGLTF.preload('/Coffee_Shop.gltf')
+useGLTF.preload('/Coffee_Shop-transformed.glb')

@@ -1,13 +1,21 @@
 import * as THREE from 'three'
 import React, { Fragment, Suspense, useRef, useState, useEffect, useMemo } from 'react'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
-import { Reflector, Environment, Loader, OrbitControls, PointerLockControls, KeyboardControls, PositionalAudio, useProgress } from '@react-three/drei'
+import { Reflector, Environment, Loader, OrbitControls, PointerLockControls, KeyboardControls, PositionalAudio, useProgress, useFBX, useTexture } from '@react-three/drei'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import {Litemodel} from './Cafe_lite.jsx'
+import {Holo} from './Holohoodie2.jsx'
 import { Person } from "./Person"
 import { Physics } from "@react-three/rapier"
 import Image2 from "/6NFcPEDO39HDxlOid6fh0KsU2bdIfuNnpUB3rlpBFJVbnA_jILc2J6SS4VAdjIZKoGT92t0TJDHxb-lEwYaeR8Iz0422nlPyUJSb.png"
+import Image3 from '/checks.png'
+import Image4 from '/b2d.png'
+import Image5 from '/pepefrogs.png'
+import Image6 from '/gmpill.png'
+import Image7 from '/darkness.png'
+import Image8 from '/NYC.png'
+import Image9 from '/yucai.png'
 
 function Image() {
 
@@ -21,14 +29,124 @@ function Image() {
   <meshLambertMaterial attach="material" map={texture} />
 
 </mesh>
-);
+)
+};
 
-}
+function SideImage() {
+
+  const texture = useLoader(THREE.TextureLoader, Image3);
+  
+  return (
+    <mesh position={[7.5, 10, -24]} scale={[0.3, 0.6, 1]}>
+
+  <planeGeometry attach="geometry" args={[15, 10]} />
+
+  <meshLambertMaterial attach="material" map={texture} />
+
+</mesh>
+)
+};
+
+function SideImage2() {
+
+  const texture = useLoader(THREE.TextureLoader, Image4);
+  
+  return (
+    <mesh position={[2.5, 10, -24]} scale={[0.3, 0.6, 1]}>
+
+  <planeGeometry attach="geometry" args={[15, 10]} />
+
+  <meshLambertMaterial attach="material" map={texture} />
+
+</mesh>
+)
+};
+
+function SideImage3() {
+
+  const texture = useLoader(THREE.TextureLoader, Image5);
+  
+  return (
+    <mesh position={[-2.5, 10, -24]} scale={[0.3, 0.6, 1]}>
+
+  <planeGeometry attach="geometry" args={[15, 10]} />
+
+  <meshLambertMaterial attach="material" map={texture} />
+
+</mesh>
+)
+};
+
+function SideImage4() {
+
+  const texture = useLoader(THREE.TextureLoader, Image6);
+  
+  return (
+    <mesh position={[-7.5, 10, -24]} scale={[0.3, 0.6, 1]}>
+
+  <planeGeometry attach="geometry" args={[15, 10]} />
+
+  <meshLambertMaterial attach="material" map={texture} />
+
+</mesh>
+)
+};
+
+function SideImage5() {
+
+  const texture = useLoader(THREE.TextureLoader, Image7);
+  
+  return (
+    <mesh position={[-12.5, 10, -24]} scale={[0.3, 0.6, 1]}>
+
+  <planeGeometry attach="geometry" args={[15, 10]} />
+
+  <meshLambertMaterial attach="material" map={texture} />
+
+</mesh>
+)
+};
+
+function FrontImage1() {
+
+  const texture = useLoader(THREE.TextureLoader, Image9);
+  
+  return (
+    <mesh position={[-26, 10, 11.5]} scale={[0.3, 0.6, 1]} rotation={[0, Math.PI / 2, 0]}>
+
+  <planeGeometry attach="geometry" args={[15, 10]} />
+
+  <meshLambertMaterial attach="material" map={texture} />
+
+</mesh>
+)
+};
+
+function FrontImage2() {
+
+  const texture = useLoader(THREE.TextureLoader, Image8);
+  
+  return (
+    <mesh position={[-26, 10, 6.5]} scale={[0.3, 0.6, 1]} rotation={[0, Math.PI / 2, 0]}>
+
+  <planeGeometry attach="geometry" args={[15, 10]} />
+
+  <meshLambertMaterial attach="material" map={texture} />
+
+</mesh>
+)
+};
+
+// const Woman = () => {
+//   const {fbx, animations} = useFBX("./GmCafe/HolloHoodie_Idle.fbx");
+//   const textures = useTexture("./GmCafe/Clothes&Hair.jpg")
+//   return <primitive meshLambertMaterial map={textures} object={fbx} scale={0.08} />;
+// };
 
 function Loaded() {
   const { active, progress, errors, item, loaded, total } = useProgress()
   return <div className="loading">{progress.toFixed(2)} % loaded ☕️</div>
-}
+};
 
 export default function App() {
 
@@ -59,12 +177,28 @@ export default function App() {
       ]}>
     <Suspense fallback={<Loaded />}>
     <Canvas camera={{ fov: 50 }}>
-     
+{/*   {show && <Billboard
+  follow={true}
+  lockX={false}
+  lockY={false}
+  lockZ={false} // Lock the rotation on the z axis (default=false)
+      >
+    <Text fontSize={1}>I'm a billboard</Text>
+  </Billboard>
+        } */}
       
       <ambientLight intensity={0.5} />
-      <directionalLight color="red" position={[0, 0, 5]} /> 
+      <directionalLight color="pink" position={[0, 0, 5]} /> 
       <Litemodel scale={[5,5,5]}/>
       <Image />
+      <SideImage />
+      <SideImage2 />
+      <SideImage3 />
+      <SideImage4 />
+      <SideImage5 />
+      <FrontImage1 />
+      <FrontImage2 />
+      <Holo scale={[6,6,6]} position={[-19, 2, -3]} rotation={[0, Math.PI / 2, 0]}/>
       <Physics gravity={[0, 0, 0]}>
       <Person />
       </Physics>
