@@ -188,7 +188,8 @@ export default function App() {
         } */}
       
       <ambientLight intensity={0.5} />
-      <directionalLight color="pink" position={[0, 0, 5]} /> 
+      <ambientLight color="red" intensity={0.1}/> 
+      <directionalLight color="pink" position={[0,4,10]} intensity={1} target-position={[-19, 2, -3]}/> 
       <Litemodel scale={[5,5,5]}/>
       <Image />
       <SideImage />
